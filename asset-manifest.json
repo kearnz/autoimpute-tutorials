@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/autoimpute-tutorials/static/css/main.2cce8147.chunk.css",
-    "main.js": "/autoimpute-tutorials/static/js/main.0713a24c.chunk.js",
-    "main.js.map": "/autoimpute-tutorials/static/js/main.0713a24c.chunk.js.map",
+    "main.css": "/autoimpute-tutorials/static/css/main.34de6062.chunk.css",
+    "main.js": "/autoimpute-tutorials/static/js/main.989a158d.chunk.js",
+    "main.js.map": "/autoimpute-tutorials/static/js/main.989a158d.chunk.js.map",
     "runtime~main.js": "/autoimpute-tutorials/static/js/runtime~main.dfa0726d.js",
     "runtime~main.js.map": "/autoimpute-tutorials/static/js/runtime~main.dfa0726d.js.map",
-    "static/js/2.b41502e9.chunk.js": "/autoimpute-tutorials/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/autoimpute-tutorials/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.3310f33a.chunk.js": "/autoimpute-tutorials/static/js/2.3310f33a.chunk.js",
+    "static/js/2.3310f33a.chunk.js.map": "/autoimpute-tutorials/static/js/2.3310f33a.chunk.js.map",
     "index.html": "/autoimpute-tutorials/index.html",
-    "precache-manifest.f9998d56aaba3182d505d6b875d49705.js": "/autoimpute-tutorials/precache-manifest.f9998d56aaba3182d505d6b875d49705.js",
+    "precache-manifest.10f3d16f0e99c5068ffc5e4b0dad17f1.js": "/autoimpute-tutorials/precache-manifest.10f3d16f0e99c5068ffc5e4b0dad17f1.js",
     "service-worker.js": "/autoimpute-tutorials/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/autoimpute-tutorials/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/autoimpute-tutorials/static/media/logo.5d5d9eef.svg"
+    "static/css/main.34de6062.chunk.css.map": "/autoimpute-tutorials/static/css/main.34de6062.chunk.css.map"
   }
 }
