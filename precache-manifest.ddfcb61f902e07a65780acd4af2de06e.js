@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6e13c41c1367029859e0b517aedae311",
+    "revision": "e0293ee15edf21847011df83a25571b6",
     "url": "/autoimpute-tutorials/index.html"
   },
   {
-    "revision": "f8fde14f3336c88de243",
+    "revision": "93cc150c22bfe9b058e1",
     "url": "/autoimpute-tutorials/static/css/2.266e55a5.chunk.css"
   },
   {
-    "revision": "716c4db31529593f64f3",
+    "revision": "766fa839b16a44399bd1",
     "url": "/autoimpute-tutorials/static/css/main.b7126b84.chunk.css"
   },
   {
-    "revision": "f8fde14f3336c88de243",
-    "url": "/autoimpute-tutorials/static/js/2.e5cab548.chunk.js"
+    "revision": "93cc150c22bfe9b058e1",
+    "url": "/autoimpute-tutorials/static/js/2.335f1781.chunk.js"
   },
   {
-    "revision": "716c4db31529593f64f3",
-    "url": "/autoimpute-tutorials/static/js/main.4861c450.chunk.js"
+    "revision": "766fa839b16a44399bd1",
+    "url": "/autoimpute-tutorials/static/js/main.2077dd6b.chunk.js"
   },
   {
     "revision": "b904018510989bdcc0f8",
