@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bcb9dc4cf8727be07b985f17855463a8",
+    "revision": "0e22be80be6732d14e9641f2725004b9",
     "url": "/autoimpute-tutorials/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/autoimpute-tutorials/static/css/2.266e55a5.chunk.css"
   },
   {
-    "revision": "cf724788c631a88f671b",
+    "revision": "c451e066b381b4f0df55",
     "url": "/autoimpute-tutorials/static/css/main.c5b8679c.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/autoimpute-tutorials/static/js/2.4baa5e65.chunk.js"
   },
   {
-    "revision": "cf724788c631a88f671b",
-    "url": "/autoimpute-tutorials/static/js/main.3c754441.chunk.js"
+    "revision": "c451e066b381b4f0df55",
+    "url": "/autoimpute-tutorials/static/js/main.8b11b36a.chunk.js"
   },
   {
     "revision": "b904018510989bdcc0f8",
