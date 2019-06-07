@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/autoimpute-tutorials/static/css/main.c5b8679c.chunk.css",
+    "main.css": "/autoimpute-tutorials/static/css/main.badd4c4e.chunk.css",
     "main.js": "/autoimpute-tutorials/static/js/main.8b11b36a.chunk.js",
     "main.js.map": "/autoimpute-tutorials/static/js/main.8b11b36a.chunk.js.map",
     "runtime~main.js": "/autoimpute-tutorials/static/js/runtime~main.dfa0726d.js",
@@ -9,9 +9,9 @@
     "static/js/2.4baa5e65.chunk.js": "/autoimpute-tutorials/static/js/2.4baa5e65.chunk.js",
     "static/js/2.4baa5e65.chunk.js.map": "/autoimpute-tutorials/static/js/2.4baa5e65.chunk.js.map",
     "index.html": "/autoimpute-tutorials/index.html",
-    "precache-manifest.e4accee5ed06631c5a30616e714616c2.js": "/autoimpute-tutorials/precache-manifest.e4accee5ed06631c5a30616e714616c2.js",
+    "precache-manifest.e4e68373b9a610fe90dfd3ba7614be78.js": "/autoimpute-tutorials/precache-manifest.e4e68373b9a610fe90dfd3ba7614be78.js",
     "service-worker.js": "/autoimpute-tutorials/service-worker.js",
     "static/css/2.266e55a5.chunk.css.map": "/autoimpute-tutorials/static/css/2.266e55a5.chunk.css.map",
-    "static/css/main.c5b8679c.chunk.css.map": "/autoimpute-tutorials/static/css/main.c5b8679c.chunk.css.map"
+    "static/css/main.badd4c4e.chunk.css.map": "/autoimpute-tutorials/static/css/main.badd4c4e.chunk.css.map"
   }
 }
