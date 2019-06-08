@@ -5,6 +5,7 @@
   "homepage": "http://kearnz.github.io/autoimpute-tutorials",
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8",

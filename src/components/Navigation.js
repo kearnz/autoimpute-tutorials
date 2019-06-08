@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import Contact from "./Contact";
 import Home from "./Home";
+import Comparing from "./Comparing";
+import ImputerI from "./ImputerI";
+import ImputerII from "./ImputerII";
+import ImputerIII from "./ImputerIII";
+import EndToEnd from "./EndToEnd";
+
 
 const NavItem = props => {
   const pageURI = window.location.pathname+window.location.search
@@ -25,7 +32,6 @@ class NavDropdown extends Component {
   }
   showDropdown(e) {
     e.preventDefault();
-    console.log(e.target.id)
     this.setState(prevState => ({
       isToggleOn: !prevState.isToggleOn
     }));
@@ -64,6 +70,15 @@ class Navigation extends React.Component {
   handleClick(key) {
     //event.preventDefault();
     this.setState({activeKey: key});
+    
+    // NOT A GOOD SOLUTION - temporary hack to remove dropdown
+    // but requires a double click on tutorial button next time
+    // because state not altered, class just changed to trigger event
+    // should not be using jquery for this moving forward
+    if($('.dropdown-menu').hasClass('show')){
+      $( ".dropdown-menu" ).trigger( "click" );
+        $('.dropdown-menu').removeClass('show');
+    }
   }
   render() {
     return (
@@ -75,11 +90,11 @@ class Navigation extends React.Component {
             <NavItem name="Home" onClick={this.handleClick.bind(this, 1)} />
             <NavItem name="Contact" onClick={this.handleClick.bind(this, 2)} />
             <NavDropdown name="Tutorials">
-                <a className="dropdown-item" href={this.props.path} onClick={this.handleClick.bind(this, 3.1)}>Exploring Missingness</a>
                 <a className="dropdown-item" href={this.props.path} onClick={this.handleClick.bind(this, 3.2)}>Imputers: Part I</a>
                 <a className="dropdown-item" href={this.props.path} onClick={this.handleClick.bind(this, 3.3)}>Imputers: Part II</a>
                 <a className="dropdown-item" href={this.state.path} onClick={this.handleClick.bind(this, 3.4)}>Imputers: Part III</a>
                 <a className="dropdown-item" href={this.state.path} onClick={this.handleClick.bind(this, 3.5)}>Comparing Imputation Methods</a>
+                <a className="dropdown-item" href={this.state.path} onClick={this.handleClick.bind(this, 3.6)}>End-to-End Analysis</a>
             </NavDropdown>
           </ul>
         </div>
@@ -87,7 +102,11 @@ class Navigation extends React.Component {
        <div className="content">
          {this.state.activeKey === 1 ? <Home/> : null}
          {this.state.activeKey === 2 ? <Contact/> : null}
-         {this.state.activeKey > 2 ? "Tutorials coming soon! " + this.state.activeKey: null}
+         {this.state.activeKey === 3.2 ? <ImputerI/> : null}
+         {this.state.activeKey === 3.3 ? <ImputerII/> : null}
+         {this.state.activeKey === 3.4 ? <ImputerIII/> : null}
+         {this.state.activeKey === 3.5 ? <Comparing/> : null}
+         {this.state.activeKey === 3.6 ? <EndToEnd/> : null}
        </div>
       </div>
       

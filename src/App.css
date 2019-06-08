@@ -1,3 +1,6 @@
+/* CSS FOR ALL PAGES */
+
+/* Styling the Nav Bar */
 .navbar {
     background-color: #343a40;
     position: fixed !important;
@@ -6,7 +9,7 @@
 }
 
 .navbar-brand, .navbar-brand:hover {
-    color: #61dafb;
+    color: #b5e5ff;
 }
 
 .navbar .nav-item a.nav-link {
@@ -22,12 +25,18 @@
     color: white;
   }
 
+  .dropdown-item {
+    cursor: pointer !important;
+  }
+
+  /* Styling the main container that holds pages */
   .content {
     padding-top: 80px;  
     padding-left: 50px;
     padding-right: 50px;
   }
 
+  /* Specifications for all quotes, code, images, and tables */
   pre {
     border: 1px solid #ccc;
   }
@@ -44,7 +53,12 @@
     background: #fff;
   }
   
-  th,
+  th {
+    background-color: #343a40;
+    color:  #b5e5ff;
+    padding: 6px 13px;
+  }
+
   td {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;
@@ -53,3 +67,106 @@
   table tr:nth-child(2n) {
     background: #f6f8fa;
   }
+
+  .dataframe {
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+  }
+
+  img {
+    max-width: 95%;
+    max-height: 95%;
+    padding-bottom: 5px;
+ }
+
+ .neg-bias {
+   color: red;
+ }
+
+ .pos-bias {
+   color: green;
+ }
+
+ /* STYLING FOR THE HOMEPAGE */
+ .home-page {
+  display: flex;
+}
+
+.home-page-left {
+  padding-right: 25px;
+  flex: 0 0 50%;
+}
+
+.home-page-right {
+  flex: 1;
+}
+
+ /* STYLING FOR THE COMPARING IMPUTATION METHODS TUTORIAL */
+  .comparing-imputation-methods {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    float: left;
+  }
+
+  .cim-code-1 {
+    width: 50%;
+    padding-right: 5px;
+    float: left;
+  }
+  
+  .cim-table-code-1, .cim-df-scatter-01 {
+    width: 50%;
+    float: left;
+    height: 50%;
+  }
+
+  .cim-df-scatter-01 {
+    padding-top: 5px;
+  }
+
+/* STYLING FOR THE END TO END TUTORIAL */
+.end-to-end {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: left;
+}
+
+.ete-mcar {
+  width: 50%;
+  padding-right: 10px;
+  float: left;
+}
+
+.ete-mar {
+  width: 50%;
+  float: left;
+}
+
+.ete-percent, .ete-locations,
+.ete-dist, .ete-box, .ete-strip, .ete-swarm {
+  height: 400px;
+}
+
+.ete-scatter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 500px;
+}
+
+/* STYLING FOR THE IMPUTER MECHANICS SERIES */
+.imputer-I, .imputer-II, .imputer-III {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
+
+.autoimpute-logo {
+  height: 350px;
+  width: 700px;
+  padding-bottom: 20px;
+}
