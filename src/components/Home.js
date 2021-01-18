@@ -23,8 +23,8 @@ Autoimpute is designed to be user friendly and flexible.
 Imputations can be as simple as:
 \`\`\`python
 
-from autoimpute.imputations import MultipleImputer
-imp = MultipleImputer()
+from autoimpute.imputations import MiceImputer
+imp = MiceImputer()
 imp.fit_transform(data)
 \`\`\`
 
@@ -46,7 +46,7 @@ const backgroundText = `
 * Utility functions to examine patterns in missing data
 * Missingness classifier and automatic missing data test set generator
 * Numerous imputation methods for continuous, categorical, and time-series data
-* Single and multiple imputation frameworks to apply imputation methods
+* Single, Multiple, and MICE imputer classes to apply imputation methods
 * Custom visualization support for utility functions and imputation methods
 * Analysis methods and pooled parameter inference using multiply imputed datasets
 * Adherence to \`sklearn\` API design for imputation and analysis classes
@@ -69,5 +69,5 @@ class Home extends Component {
     );
   }
 }
- 
+
 export default Home;

@@ -7,14 +7,14 @@ const header = `
 
 ## Getting the Most out of the Imputer Classes: Part III
 ---
-This tutorial is part III of a comprehensive overview of \`Autoimpute\` Imputers. It includes:  
+This tutorial is part III of a comprehensive overview of \`Autoimpute\` Imputers. It includes:
 
-1. Prepping Environment and Creating Data  
-2. A Quick Review of the \`SingleImputer\`  
-3. Issues with Single Imputation  
-4. Multiple Imputation in \`Autoimpute\`  
-5. \`MultipleImputer\` under the Hood  
-6. Considerations during Multiple Imputation  
+1. Prepping Environment and Creating Data
+2. A Quick Review of the \`SingleImputer\`
+3. Issues with Single Imputation
+4. Multiple Imputation in \`Autoimpute\`
+5. \`MultipleImputer\` under the Hood
+6. Considerations during Multiple Imputation
 
 ### 1. Prepping Environment and Creating Data
 As with most tutorials, we begin by prepping our environment. Here, we import familiar packages for data analysis as well as the \`SingleImputer\` and \`MultipleImputer\` from \`Autoimpute\`. We also import visualization methods native to \`Autoimpute\` that help us visually understand the multiple imputation framework. Finally, we generate sample data, sticking with two variables, predictor **x** and response **y**. Only **y** has observations with missing values.
@@ -50,13 +50,13 @@ vary = lambda v: np.random.choice(np.arange(v))
 a = 2
 b = 1/2
 eps = np.array([norm(0, vary(30)).rvs() for n in N])
-y = (a + b*N + eps) / 100                         
+y = (a + b*N + eps) / 100
 x = (N + norm(10, vary(250)).rvs(len(N))) / 100
- 
+
 # 30% missing in y
 y[binom(1, 0.3).rvs(len(N)) == 1] = np.nan
 
-# collect results in a dataframe 
+# collect results in a dataframe
 data_miss = pd.DataFrame({"y": y, "x": x})
 sns.scatterplot(x="x", y="y", data=data_miss)
 plt.show()
@@ -67,7 +67,7 @@ plt.show()
 const partTwo = `
 
 ### 2. A Quick Review of the SingleImputer
-The dataset we create above is missing roughly 30% of the values in **y**. As we've seen in the first two tutorials, we can use the \`SingleImputer\` in \`Autoimpute\` to replace the missing values with plausible imputations. In the code below, we create a default instance of the \`SingleImputer\` and assign it the variable name \`si\`. Because **y** is numeric, \`si\` implements the predictive mean matching algorithm by default to generate imputations when we call its \`fit_transform\` method. 
+The dataset we create above is missing roughly 30% of the values in **y**. As we've seen in the first two tutorials, we can use the \`SingleImputer\` in \`Autoimpute\` to replace the missing values with plausible imputations. In the code below, we create a default instance of the \`SingleImputer\` and assign it the variable name \`si\`. Because **y** is numeric, \`si\` implements the predictive mean matching algorithm by default to generate imputations when we call its \`fit_transform\` method.
 
 
 \`\`\`python
@@ -111,7 +111,7 @@ print([f"{k}: {len(v)}" for k, v in si.imputed_.items()])
     Index of imputed values in each column
     --------------------------------------
     {'x': [], 'y': [0, 6, 9, 14, 16, 18, 20, 26, 29, 30, 41, 43, 47, 49, 54, 56, 59, 66, 67, 71, 73, 75, 80, 83, 86, 87, 88, 93, 98, 100, 116, 117, 118, 121, 122, 128, 132, 134, 138, 142, 146, 147, 149, 153, 159, 168, 171, 177, 178, 180, 182, 183, 185, 186, 187, 191, 192, 195, 199, 200, 201, 204, 209, 225, 228, 231, 233, 235, 236, 237, 242, 245, 247, 249, 250, 252, 259, 266, 269, 271, 272, 273, 276, 279, 284, 290, 296, 298, 302, 308, 311, 313, 318, 320, 321, 323, 325, 326, 327, 330, 332, 335, 339, 341, 346, 351, 353, 354, 358, 359, 363, 365, 368, 374, 379, 380, 382, 383, 384, 389, 392, 396, 398, 399]}
-    
+
     Number of imputations in each column
     ------------------------------------
     ['x: 0', 'y: 124']
@@ -127,7 +127,7 @@ Whether imputed values change and by how much depends on the imputation method u
 ### 4. Multiple Imputation in Autoimpute
 Multiple imputation strives to solve the issues with single imputation. When we peform multiple imputation, we impute the same dataset multiple times, and we store a separate copy of each imputed dataset. The difference between imputed values in each dataset depends on the structure of the observed data and the imputation algorithm used. Regardless, multiple imputation gives us a framework with which we can treat each missing record as a random variable. We can produce multiple imputations for each missing value and then assess the variance that results from mutliple imputations.
 
-In the code below, we create an instance of the \`MultipleImputer\`, named \`mi\`. We then apply \`mi\` 5 times (the default in \`Autoimpute\`). We store the results in another variable, named \`mi_data_full\`. The variable represents a list of tuples, where the first value in each tuple is the imputation number (1-5 in this case) and the second value in each tuple is the imputed dataset for a given imputation. We then concatenate the **y** Series from each imputation and compare the results to the original dataset. We notice that the imputed values for **y** are often different between the 5 imputations. 
+In the code below, we create an instance of the \`MultipleImputer\`, named \`mi\`. We then apply \`mi\` 5 times (the default in \`Autoimpute\`). We store the results in another variable, named \`mi_data_full\`. The variable represents a list of tuples, where the first value in each tuple is the imputation number (1-5 in this case) and the second value in each tuple is the imputed dataset for a given imputation. We then concatenate the **y** Series from each imputation and compare the results to the original dataset. We notice that the imputed values for **y** are often different between the 5 imputations.
 
 
 \`\`\`python
@@ -196,7 +196,7 @@ plot_imp_dists(mi_data_full, mi, "y")
 const boxPlot = `
 
 #### Box Plot
-The boxplot also shows the observed distribution for **y** and the distribution after each imputation. These boxplots are another way to visualize the distribution of a variable and how that distribution changes when multiple imputations take place, each of which treats a missing data point as a random variable. 
+The boxplot also shows the observed distribution for **y** and the distribution after each imputation. These boxplots are another way to visualize the distribution of a variable and how that distribution changes when multiple imputations take place, each of which treats a missing data point as a random variable.
 
 
 \`\`\`python
@@ -208,7 +208,7 @@ plot_imp_boxplots(mi_data_full, mi, "y", side_by_side=True)
 const swarmPlot = `
 
 #### Swarm Plot
-The swarm plot helps visualize the actual "point estimate" imputed records take in each imputation round. It most clearly demonstrates the differences between each imputation iteration. Some imputed values are the same from iteration to iteration, but others are clearly distinct. For example, imputation round 1 and 5 (below) contain an imputed value at the the upper tail of the distribution of **y**, while imputation round 3 and 4 contain an imputed value at the bottom tail of the sitribution of **y**. 
+The swarm plot helps visualize the actual "point estimate" imputed records take in each imputation round. It most clearly demonstrates the differences between each imputation iteration. Some imputed values are the same from iteration to iteration, but others are clearly distinct. For example, imputation round 1 and 5 (below) contain an imputed value at the the upper tail of the distribution of **y**, while imputation round 3 and 4 contain an imputed value at the bottom tail of the sitribution of **y**.
 
 
 \`\`\`python
@@ -605,5 +605,5 @@ class ImputerIII extends Component {
         );
     }
   }
-   
+
   export default ImputerIII;
